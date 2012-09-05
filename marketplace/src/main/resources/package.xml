@@ -1,0 +1,57 @@
+<package type="addon" name="platform-explorer" version="@VERSION@">
+  <title>Platform Explorer</title>
+  <description>
+    <p>
+      Platform Explorer (aka APIDoc) provides an API to browse the Nuxeo distribution trees:
+      <ul>
+        <li>BundleGroups (maven group or artificial grouping)</li>
+        <li>Bundles</li>
+        <li>Components</li>
+        <li>Services</li>
+        <li>Extension Points</li>
+        <li>Contributions</li>
+      </ul>
+      <br />
+      The Nuxeo distributions can be:
+      <ul>
+        <li>live: in memory (meaning runtime introspection)</li>
+        <li>persisted: saved in Nuxeo Repository as a tree of Documents</li>
+      </ul>
+      <br />
+      In addition a DocumentationService is provided to be able to:
+      <ul>
+        <li>extract Documentation that is built-in Nuxeo Runtime descriptors
+        </li>
+        <li>extract Documentation that may be embedded inside the jar</li>
+        <li>add some use documentation (How to, Code samples ...)</li>
+      </ul>
+      <br />
+      It can be used to:
+      <ul>
+        <li>browse you distribution and write some documentation</li>
+        <li>check that a given contribution is deployed</li>
+        <li>play with Nuxeo Runtime</li>
+      </ul>
+    </p>
+    <p>
+      For instance, Platform Explorer is used to generate
+      <a href="http://explorer.nuxeo.org">http://explorer.nuxeo.org</a>
+      which is a useful complement to the Javadoc for the developers.
+    </p>
+  </description>
+  <home-page>http://doc.nuxeo.com/x/VoVH</home-page>
+  <platforms>
+    <platform>cap-@DISTVERSION@</platform>
+  </platforms>
+  <hotreload-support>false</hotreload-support>
+  <supported>true</supported>
+  <require-terms-and-conditions-acceptance>true
+  </require-terms-and-conditions-acceptance>
+  <production-state>production_ready</production-state>
+  <nuxeo-validation>nuxeo_certified</nuxeo-validation>
+  <vendor>Nuxeo</vendor>
+    
+  <license>LGPL</license>
+    
+  <license-url>http://www.gnu.org/licenses/lgpl-2.1.html</license-url>
+</package>
