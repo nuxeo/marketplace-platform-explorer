@@ -12,10 +12,10 @@
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
   <name>Nuxeo Platform Explorer Marketplace package</name>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
 
   <properties>
-    <nuxeo.pe.version>1.0-SNAPSHOT</nuxeo.pe.version>
+    <nuxeo.pe.version>1.0</nuxeo.pe.version>
   </properties>
 
   <modules>
