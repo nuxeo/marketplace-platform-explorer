@@ -5,46 +5,23 @@
   <parent>
     <groupId>org.nuxeo.ecm.distribution</groupId>
     <artifactId>nuxeo-distribution</artifactId>
-    <version>5.7-SNAPSHOT</version>
+    <version>5.7.1</version>
   </parent>
 
-  <groupId>org.nuxeo.platform.explorer</groupId>
-  <artifactId>parent</artifactId>
-  <packaging>pom</packaging>
-  <name>Nuxeo Platform Explorer Marketplace package</name>
-  <version>1.1-SNAPSHOT</version>
+  <artifactId>explorer-marketplace</artifactId>
+  <packaging>zip</packaging>
+  <name>Explorer Marketplace package</name>
 
   <properties>
-    <nuxeo.pe.version>1.1-SNAPSHOT</nuxeo.pe.version>
+    <nuxeo.pe.version>1.1.1</nuxeo.pe.version>
   </properties>
-
-  <modules>
-    <module>ear</module>
-    <module>marketplace</module>
-  </modules>
-
-  <profiles>
-    <profile>
-      <id>ftest</id>
-      <modules>
-        <module>ftest/webdriver</module>
-      </modules>
-    </profile>
-  </profiles>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.nuxeo.platform.explorer</groupId>
-        <artifactId>ear</artifactId>
-        <version>${nuxeo.pe.version}</version>
-        <type>zip</type>
-      </dependency>
-      <dependency>
-        <groupId>org.nuxeo.platform.explorer</groupId>
-        <artifactId>marketplace</artifactId>
-        <version>${nuxeo.pe.version}</version>
-        <type>zip</type>
+        <groupId>org.nuxeo.ecm.platform</groupId>
+        <artifactId>nuxeo-apidoc-core</artifactId>
+        <version>${nuxeo.addons.version}</version>
       </dependency>
       <dependency>
         <groupId>org.nuxeo.ecm.platform</groupId>
@@ -54,34 +31,18 @@
     </dependencies>
   </dependencyManagement>
 
-  <repositories>
-    <repository>
-      <id>public</id>
-      <url>http://maven.nuxeo.org/nexus/content/groups/public</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>public-snapshot</id>
-      <url>http://maven.nuxeo.org/nexus/content/groups/public-snapshot</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
-  <scm>
-    <connection>scm:git:git://github.com/nuxeo/marketplace-platform-explorer.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:nuxeo/marketplace-platform-explorer.git</developerConnection>
-    <url>https://github.com/nuxeo/marketplace-platform-explorer</url>
-  </scm>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.nuxeo.build</groupId>
+        <artifactId>nuxeo-distribution-tools</artifactId>
+        <configuration>
+          <buildFiles>
+            <buildFile>${basedir}/src/main/assemble/assembly.xml</buildFile>
+          </buildFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
