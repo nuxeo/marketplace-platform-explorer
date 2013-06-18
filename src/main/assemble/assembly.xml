@@ -17,8 +17,8 @@
     <copy todir="${outdir}/marketplace">
       <fileset dir="src/main/resources" />
       <filterset>
-        <filter token="VERSION" value="${nuxeo.pe.version}" />
-        <filter token="DISTVERSION" value="${nuxeo.addons.version}" />
+        <filter token="VERSION" value="${maven.project.version}" />
+        <filter token="DISTVERSION" value="${nuxeo.distribution.version}" />
       </filterset>
     </copy>
 
@@ -33,12 +33,11 @@
     <copy todir="${outdir}/marketplace/install/lib">
     </copy>-->
 
-    <zip destfile="${outdir}/${maven.project.artifactId}-${nuxeo.pe.version}.zip"
+    <zip destfile="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
          basedir="${outdir}/marketplace" />
-    <artifact:attach file="${outdir}/${maven.project.artifactId}-${nuxeo.pe.version}.zip"
+    <artifact:attach file="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
                      target="${maven.project.groupId}:${maven.project.artifactId}"
                      type="zip" />
-
   </target>
 
 </project>
