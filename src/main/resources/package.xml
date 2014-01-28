@@ -42,6 +42,7 @@
   <home-page>http://doc.nuxeo.com/x/VoVH</home-page>
   <platforms>
     <platform>cap-@DISTVERSION@</platform>
+    <platform>cap-5.8</platform>
   </platforms>
   <hotreload-support>false</hotreload-support>
   <supported>true</supported>
