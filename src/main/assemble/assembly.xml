@@ -1,4 +1,4 @@
-<project name="nuxeo-assembly"
+<project name="explorer-assembly"
          default="build"
          xmlns:nx="urn:nuxeo-build"
          xmlns:artifact="urn:nuxeo-artifact">
@@ -26,7 +26,7 @@
       <!-- Your bundles -->
       <artifact:resolveFile key="org.nuxeo.ecm.platform:nuxeo-apidoc-core::jar" />
       <artifact:resolveFile key="org.nuxeo.ecm.platform:nuxeo-apidoc-webengine::jar" />
-      <artifact:resolveFile key="org.nuxeo.ecm.webengine:nuxeo-webengine-ui:${nuxeo.distribution.version}:jar"/>
+      <artifact:resolveFile key="org.nuxeo.ecm.webengine:nuxeo-webengine-ui:${nuxeo.distribution.version}:jar" />
     </copy>
     <!-- Whereas the marketplace build using an NXR is automatically downloading the
     required libraries, that simpler solution requires you explicitly list them -->
@@ -37,7 +37,6 @@
     <zip destfile="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
          basedir="${outdir}/marketplace" />
     <artifact:attach file="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
-                     target="${maven.project.groupId}:${maven.project.artifactId}"
                      type="zip" />
   </target>
 
