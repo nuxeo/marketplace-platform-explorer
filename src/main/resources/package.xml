@@ -43,6 +43,11 @@
   <platforms>
     <platform>cap-@DISTVERSION@</platform>
   </platforms>
+  <conflicts>
+    <package>nuxeo-quota</package>
+    <package>nuxeo-dam-compat</package>
+    <package>nuxeo-social-collaboration</package>
+  </conflicts>
   <hotreload-support>false</hotreload-support>
   <supported>true</supported>
   <require-terms-and-conditions-acceptance>true
