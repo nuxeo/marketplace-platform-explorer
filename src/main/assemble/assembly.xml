@@ -22,6 +22,7 @@
       <artifact:file key="org.nuxeo.ecm.platform:nuxeo-apidoc-core" />
       <artifact:file key="org.nuxeo.ecm.platform:nuxeo-apidoc-webengine" />
       <artifact:file key="org.nuxeo.ecm.platform:nuxeo-apidoc-repo" />
+      <artifact:file key="com.fasterxml.jackson.core:jackson-databind" />
       <artifact:file key="org.nuxeo.ecm.webengine:nuxeo-webengine-ui" />
     </copy>
     <!-- Whereas the marketplace build using an NXR is automatically downloading the
