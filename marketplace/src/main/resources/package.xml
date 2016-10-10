@@ -41,7 +41,7 @@
   </description>
   <home-page>http://doc.nuxeo.com/x/VoVH</home-page>
   <platforms>
-    <platform>cap-@DISTVERSION@</platform>
+    <platform>cap-@DISTRIB_VERSION@</platform>
   </platforms>
   <conflicts>
     <package>nuxeo-quota</package>
