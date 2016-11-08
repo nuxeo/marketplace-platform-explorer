@@ -41,8 +41,11 @@
   </description>
   <home-page>http://doc.nuxeo.com/x/VoVH</home-page>
   <platforms>
-    <platform>cap-@DISTRIB_VERSION@</platform>
+    <platform>server-@DISTRIB_VERSION@*</platform>
   </platforms>
+  <dependencies>
+    <package>nuxeo-jsf-ui</package>
+  </dependencies>
   <conflicts>
     <package>nuxeo-quota</package>
     <package>nuxeo-dam-compat</package>
