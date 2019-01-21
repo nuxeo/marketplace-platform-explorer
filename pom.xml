@@ -8,7 +8,7 @@
 
   <groupId>org.nuxeo.ecm.distribution</groupId>
   <artifactId>marketplace-platform-explorer-parent</artifactId>
-  <version>1.8.3</version>
+  <version>1.8.4-SNAPSHOT</version>
   <name>Marketplace Platform Explorer - Parent</name>
   <packaging>pom</packaging>
 
