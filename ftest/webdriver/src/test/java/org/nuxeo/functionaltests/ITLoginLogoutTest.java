@@ -29,10 +29,12 @@ public class ITLoginLogoutTest extends AbstractTest {
     @Test
     public void testLoginLogout() throws UserNotConnectedException {
         login();
-        open("/site/distribution", JavaScriptErrorIgnoreRule.startsWith(
-                "calling a builtin typed array constructor without new is deprecated and will be forbidden in ES6"));
-        get(NUXEO_URL + "/logout", LoginPage.class,
-                JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"));
+        JavaScriptErrorIgnoreRule[] ignores = new JavaScriptErrorIgnoreRule[] {
+                JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"),
+                JavaScriptErrorIgnoreRule.startsWith(
+                        "calling a builtin typed array constructor without new is deprecated and will be forbidden in ES6") };
+        open("/site/distribution", ignores);
+        get(NUXEO_URL + "/logout", LoginPage.class, ignores);
     }
 
 }
