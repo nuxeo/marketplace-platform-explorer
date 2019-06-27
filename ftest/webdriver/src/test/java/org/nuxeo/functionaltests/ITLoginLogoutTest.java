@@ -16,9 +16,8 @@
  */
 package org.nuxeo.functionaltests;
 
-import java.io.IOException;
-
 import org.junit.Test;
+import org.nuxeo.functionaltests.JavaScriptErrorCollector.JavaScriptErrorIgnoreRule;
 import org.nuxeo.functionaltests.pages.DocumentBasePage.UserNotConnectedException;
 import org.nuxeo.functionaltests.pages.LoginPage;
 
@@ -28,9 +27,13 @@ import org.nuxeo.functionaltests.pages.LoginPage;
 public class ITLoginLogoutTest extends AbstractTest {
 
     @Test
-    public void testLoginLogout() throws UserNotConnectedException, IOException {
+    public void testLoginLogout() throws UserNotConnectedException {
         login();
         open("/site/distribution");
-        getWithoutErrorHandler(NUXEO_URL + "/logout", LoginPage.class);
+        get(NUXEO_URL + "/logout", LoginPage.class,
+                JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"),
+                JavaScriptErrorIgnoreRule.startsWith(
+                        "calling a builtin typed array constructor without new is deprecated and will be forbidden in ES6"));
     }
+
 }
