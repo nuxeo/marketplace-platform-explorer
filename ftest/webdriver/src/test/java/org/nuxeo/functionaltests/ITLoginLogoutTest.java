@@ -31,6 +31,9 @@ public class ITLoginLogoutTest extends AbstractTest {
         login();
         open("/site/distribution");
         get(NUXEO_URL + "/logout", LoginPage.class,
-                JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"));
+                JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"),
+                JavaScriptErrorIgnoreRule.startsWith(
+                        "calling a builtin typed array constructor without new is deprecated and will be forbidden in ES6"));
     }
+
 }
