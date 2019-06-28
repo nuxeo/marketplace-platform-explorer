@@ -29,6 +29,8 @@ public class ITLoginLogoutTest extends AbstractTest {
     public void testLoginLogout() throws UserNotConnectedException {
         addAfterTestIgnores(JavaScriptErrorIgnoreRule.startsWith(
                 "calling a builtin ArrayBuffer constructor without new is deprecated and will be forbidden in ES6"));
+        addAfterTestIgnores(JavaScriptErrorIgnoreRule.startsWith(
+                "calling a builtin typed array constructor without new is deprecated and will be forbidden in ES6"));
         addAfterTestIgnores(JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"));
 
         login();
