@@ -27,11 +27,12 @@ public class ITLoginLogoutTest extends AbstractTest {
 
     @Test
     public void testLoginLogout() throws UserNotConnectedException {
-        addAfterTestIgnores(JavaScriptErrorIgnoreRule.fromSource("https://js.intercomcdn.com"));
+        addAfterTestIgnores(JavaScriptErrorIgnoreRule.startsWith(
+                "calling a builtin ArrayBuffer constructor without new is deprecated and will be forbidden in ES6"));
         addAfterTestIgnores(JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"));
 
         login();
         open("/site/distribution");
-        logoutSimply();
+        driver.get(NUXEO_URL + "/logout");
     }
 }
