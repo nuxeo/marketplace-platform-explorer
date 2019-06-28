@@ -33,6 +33,6 @@ public class ITLoginLogoutTest extends AbstractTest {
 
         login();
         open("/site/distribution");
-        driver.get(NUXEO_URL + "/logout");
+        logout();
     }
 }
