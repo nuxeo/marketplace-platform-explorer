@@ -32,7 +32,8 @@ public class ITLoginLogoutTest extends AbstractTest {
         login();
         open("/site/distribution");
         get(NUXEO_URL + "/logout", LoginPage.class,
-                JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"));
+                JavaScriptErrorIgnoreRule.startsWith("unreachable code after return statement"),
+                JavaScriptErrorIgnoreRule.fromSource("https://js.intercomcdn.com"));
     }
 
 }
